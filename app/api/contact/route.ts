@@ -6,6 +6,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 interface ContactFormData {
   name: string;
   email: string;
+  subject: string;
   message: string;
   token: string;
 }
