@@ -19,6 +19,7 @@ const config: Config = {
       },
       backgroundImage: {
         'gradient-deep': 'linear-gradient(135deg, #0A192F 0%, #112240 100%)',
+        'gradient-radial': 'radial-gradient(circle, var(--tw-gradient-stops))',
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-in-out',

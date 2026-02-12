@@ -1,5 +1,8 @@
 'use client';
 
+import { AnimatedSection, AnimatedDiv } from '@/src/components/AnimatedSection';
+import { AnimatedContainer, AnimatedItem } from '@/src/components/AnimatedContainer';
+
 interface Service {
   title: string;
   description: string;
@@ -71,7 +74,7 @@ const services: Service[] = [
 
 export default function Services() {
   return (
-    <section
+    <AnimatedSection
       id="services"
       className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-deep-blue-lighter/50"
     >
@@ -88,14 +91,11 @@ export default function Services() {
         </div>
 
         {/* Grid de servicios */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+        <AnimatedContainer className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8" staggerDelay={0.08}>
           {services.map((service, index) => (
-            <div
+            <AnimatedItem
               key={index}
-              className="group bg-deep-blue border border-cyan/20 rounded-xl p-6 sm:p-8 hover:border-cyan transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-cyan/20 animate-slide-up"
-              style={{
-                animationDelay: `${index * 0.1}s`,
-              }}
+              className="group bg-deep-blue border border-cyan/20 rounded-xl p-6 sm:p-8 hover:border-cyan transition-all duration-300 hover:shadow-lg hover:shadow-cyan/20"
             >
               {/* Icono */}
               <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-lg bg-cyan/10 text-cyan mb-4 group-hover:bg-cyan group-hover:text-deep-blue transition-all duration-300">
@@ -114,10 +114,10 @@ export default function Services() {
 
               {/* Línea decorativa */}
               <div className="h-1 w-0 bg-cyan rounded-full mt-6 group-hover:w-8 transition-all duration-300" />
-            </div>
+            </AnimatedItem>
           ))}
-        </div>
+        </AnimatedContainer>
       </div>
-    </section>
+    </AnimatedSection>
   );
 }

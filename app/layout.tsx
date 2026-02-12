@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Rondón - Ingeniero de Software & Estratega Digital",
+  title: "Rondón - Ingeniero de Sistemas & Estratega Digital",
   description: "Portafolio profesional de Rondón. Especializado en sistemas críticos, arquitecturas de microservicios y autoridad digital.",
   keywords: "software engineer, full stack developer, nextjs, react, typescript",
   authors: [{ name: "Rondón" }],

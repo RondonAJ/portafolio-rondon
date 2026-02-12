@@ -1,5 +1,7 @@
 'use client';
 
+import { AnimatedSection } from '@/src/components/AnimatedSection';
+
 interface ExperienceItem {
   role: string;
   company: string;
@@ -24,7 +26,7 @@ const experiences: ExperienceItem[] = [
 
 export default function Experience() {
   return (
-    <section
+    <AnimatedSection
       id="experience"
       className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-deep-blue"
     >
@@ -83,6 +85,6 @@ export default function Experience() {
           </div>
         </div>
       </div>
-    </section>
+    </AnimatedSection>
   );
 }

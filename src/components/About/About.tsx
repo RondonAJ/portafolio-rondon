@@ -1,5 +1,8 @@
 'use client';
 
+import { AnimatedSection, AnimatedDiv } from '@/src/components/AnimatedSection';
+import { AnimatedContainer, AnimatedItem } from '@/src/components/AnimatedContainer';
+
 export default function About() {
   const skills = [
     'React / Next.js',
@@ -21,7 +24,7 @@ export default function About() {
   ];
 
   return (
-    <section
+    <AnimatedSection
       id="about"
       className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-deep-blue"
     >
@@ -88,28 +91,25 @@ export default function About() {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 mt-16">
+        <AnimatedContainer className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 mt-16" staggerDelay={0.08}>
           {[
             { label: 'Años de Experiencia', value: '3+' },
             { label: 'Proyectos Completados', value: '15+' },
             { label: 'Clientes Satisfechos', value: '10+' },
             { label: 'Tecnologías', value: '20+' },
           ].map((stat, index) => (
-            <div
+            <AnimatedItem
               key={index}
-              className="text-center p-4 sm:p-6 bg-deep-blue-lighter rounded-xl border border-cyan/20 hover:border-cyan transition-all duration-300 animate-slide-up"
-              style={{
-                animationDelay: `${index * 0.1}s`,
-              }}
+              className="text-center p-4 sm:p-6 bg-deep-blue-lighter rounded-xl border border-cyan/20 hover:border-cyan transition-all duration-300"
             >
               <p className="text-2xl sm:text-3xl font-bold text-cyan mb-2">
                 {stat.value}
               </p>
               <p className="text-white/70 text-xs sm:text-sm">{stat.label}</p>
-            </div>
+            </AnimatedItem>
           ))}
-        </div>
+        </AnimatedContainer>
       </div>
-    </section>
+    </AnimatedSection>
   );
 }

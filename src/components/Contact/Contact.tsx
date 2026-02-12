@@ -2,6 +2,7 @@
 
 import { useState, FormEvent, ChangeEvent } from 'react';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+import { AnimatedSection } from '@/src/components/AnimatedSection';
 
 interface FormData {
   name: string;
@@ -100,7 +101,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8">
+    <AnimatedSection id="contact" className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8">
       <div className="max-w-2xl mx-auto">
         {/* Encabezado */}
         <div className="text-center mb-12 animate-slide-up">
@@ -281,7 +282,7 @@ export default function Contact() {
         </div>
 
         {/* Alternativa WhatsApp */}
-        <div className="mt-8 text-center animate-slide-up" style={{ animationDelay: '0.2s' }}>
+        {/*<div className="mt-8 text-center animate-slide-up" style={{ animationDelay: '0.2s' }}>
           <p className="text-white/70 mb-4">O preferiblemente:</p>
           <a
             href="https://wa.me/56XXXXXXXXX?text=Hola!%20Me%20interesa%20conocer%20m%C3%A1s%20sobre%20tus%20servicios"
@@ -298,8 +299,8 @@ export default function Contact() {
             </svg>
             Contactar por WhatsApp
           </a>
-        </div>
+        </div>*/}
       </div>
-    </section>
+    </AnimatedSection>
   );
 }

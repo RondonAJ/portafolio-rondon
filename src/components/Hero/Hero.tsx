@@ -1,14 +1,19 @@
 'use client';
 
 import Link from 'next/link';
+import { HeroEffect3D } from '@/src/components/HeroEffect3D';
 
 export default function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20 animate-fade-in"
+      className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20 animate-fade-in relative overflow-hidden"
     >
-      <div className="max-w-4xl mx-auto text-center">
+      {/* 3D Effect - Background with depth simulation */}
+      <HeroEffect3D />
+
+      {/* Content - z-index higher to stay on top */}
+      <div className="max-w-4xl mx-auto text-center relative z-10">
         {/* Saludo inicial */}
         <div className="mb-6">
           <span className="text-cyan font-mono text-sm sm:text-base">
@@ -23,7 +28,7 @@ export default function Hero() {
 
         {/* Subtitle Grande */}
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 text-white/90 animate-slide-up">
-          Ingeniero de Software & Estratega de Autoridad Digital
+          Ingeniero de Sistemas & Estratega de Autoridad Digital
         </h2>
 
         {/* Descripción */}
@@ -44,14 +49,14 @@ export default function Hero() {
           </Link>
 
           {/* Botón WhatsApp */}
-          <a
+         {/*<a
             href="https://wa.me/56XXXXXXXXX?text=Hola!%20Me%20interesa%20conocer%20m%C3%A1s%20sobre%20tus%20servicios"
             target="_blank"
             rel="noopener noreferrer"
             className="px-8 py-3 sm:px-10 sm:py-4 border-2 border-cyan text-cyan font-semibold rounded-lg hover:bg-cyan hover:text-deep-blue transition-all duration-300 transform hover:scale-105 active:scale-95 text-center"
           >
             Hablemos por WhatsApp
-          </a>
+          </a>*/}
         </div>
 
         {/* Scroll Indicator */}

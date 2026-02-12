@@ -1,5 +1,8 @@
 'use client';
 
+import { AnimatedSection, AnimatedDiv } from '@/src/components/AnimatedSection';
+import { AnimatedContainer, AnimatedItem } from '@/src/components/AnimatedContainer';
+
 interface Project {
   title: string;
   description: string;
@@ -33,7 +36,7 @@ const projects: Project[] = [
 
 export default function Projects() {
   return (
-    <section
+    <AnimatedSection
       id="projects"
       className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-deep-blue-lighter/50"
     >
@@ -48,14 +51,11 @@ export default function Projects() {
         </div>
 
         {/* Grid de proyectos */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <AnimatedContainer className="grid grid-cols-1 lg:grid-cols-2 gap-8" staggerDelay={0.1}>
           {projects.map((project, index) => (
-            <div
+            <AnimatedItem
               key={index}
-              className="group bg-deep-blue border border-cyan/20 rounded-xl overflow-hidden hover:border-cyan transition-all duration-300 hover:shadow-lg hover:shadow-cyan/20 animate-slide-up"
-              style={{
-                animationDelay: `${index * 0.1}s`,
-              }}
+              className="group bg-deep-blue border border-cyan/20 rounded-xl overflow-hidden hover:border-cyan transition-all duration-300 hover:shadow-lg hover:shadow-cyan/20"
             >
               {/* Contenido */}
               <div className="p-6 sm:p-8">
@@ -90,10 +90,10 @@ export default function Projects() {
                   ))}
                 </div>
               </div>
-            </div>
+            </AnimatedItem>
           ))}
-        </div>
+        </AnimatedContainer>
       </div>
-    </section>
+    </AnimatedSection>
   );
 }
